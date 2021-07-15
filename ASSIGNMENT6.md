@@ -34,7 +34,6 @@
 	ANS.
 
 
-
 ## Qn.4 What is a[] after executing the following code fragment?
 
 		n = 10
@@ -56,5 +55,43 @@
 
 
 ## Bonus. Compose a program that takes an integer command-line argument n and writes n poker hands (five cards each) from a shuffled deck, separated by blank lines.
+
+
+	ANS. 
+
+		import random
+
+		suits = ["Hearts", "Spades", "Clubs", "Diamonds"]
+		ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+		deck = []
+
+		for suit in suits:
+		    for rank in ranks:
+		        deck.append(f'{rank} of {suit}')
+
+		print (f'There are {len(deck)} cards in the deck.')
+		print ()
+		print ("Dealing........")
+		print()
+
+		player_1 = []
+		player_2 = []
+
+		while len(player_1)<5:
+		    card = random.choice (deck)
+		    deck.remove (card)
+		    player_1.append(card)
+		    card_2 = random.choice(deck)
+		    deck.remove(card_2)
+		    player_2.append(card_2)
+
+		print (f'There are now {len(deck)} cards in the deck.')
+		print ()
+		print ("Player1 has the following cards in their hand: ")
+		print (player_1)
+		print ()
+		print ("Player2 has the following cards in their hand: ")
+		print (player_2)
+		print ()
 
 
